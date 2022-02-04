@@ -1,0 +1,11 @@
+.container {
+  background-color: #f7f7f7;
+  align-items: center;
+}
+.title {
+  height: 120rpx;
+  justify-content: center;
+}
+.input {
+  width: 100%;
+}

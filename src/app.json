@@ -2,10 +2,75 @@
   "routes": [
     {
       "path": "/",
-      "source": "pages/Home/index"
+      "source": "pages/Home/index",
+      "window": {
+        "title": "首页",
+        "backgroundColor": "#f7f7f7"
+      }
+    },
+    {
+      "path": "/product",
+      "source": "pages/Product/index",
+      "window": {
+        "title": "商品",
+        "backgroundColor": "#ff0"
+      }
+    },
+    {
+      "path": "/order",
+      "source": "pages/Order/index",
+      "window": {
+        "title": "订单",
+        "backgroundColor": "#f0f"
+      }
+    },
+    {
+      "path": "/mine",
+      "source": "pages/Mine/index",
+      "window": {
+        "title": "我的",
+        "backgroundColor": "#f7f7f7"
+      }
+    },
+    {
+      "path": "/login",
+      "source": "pages/Mine/Login/index",
+      "window": {
+        "title": "登陆/注册",
+        "backgroundColor": "#f7f7f7"
+      }
     }
   ],
   "window": {
-    "title": "Rax App"
+    "title": "Rax App",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "items": [
+      {
+        "text": "首页",
+        "pageName": "/",
+        "icon": "https://gw.alicdn.com/tfs/TB1ypSMTcfpK1RjSZFOXXa6nFXa-144-144.png",
+        "activeIcon": "https://gw.alicdn.com/tfs/TB1NBiCTgHqK1RjSZFPXXcwapXa-144-144.png"
+      },
+      {
+        "text": "商品",
+        "pageName": "/product",
+        "icon": "https://gw.alicdn.com/tfs/TB1ypSMTcfpK1RjSZFOXXa6nFXa-144-144.png",
+        "activeIcon": "https://gw.alicdn.com/tfs/TB1NBiCTgHqK1RjSZFPXXcwapXa-144-144.png"
+      },
+      {
+        "text": "订单",
+        "pageName": "/order",
+        "icon": "https://gw.alicdn.com/tfs/TB1ypSMTcfpK1RjSZFOXXa6nFXa-144-144.png",
+        "activeIcon": "https://gw.alicdn.com/tfs/TB1NBiCTgHqK1RjSZFPXXcwapXa-144-144.png"
+      },
+      {
+        "text": "我的",
+        "pageName": "/mine",
+        "icon": "https://gw.alicdn.com/tfs/TB1ypSMTcfpK1RjSZFOXXa6nFXa-144-144.png",
+        "activeIcon": "https://gw.alicdn.com/tfs/TB1NBiCTgHqK1RjSZFPXXcwapXa-144-144.png"
+      }
+    ]
   }
 }

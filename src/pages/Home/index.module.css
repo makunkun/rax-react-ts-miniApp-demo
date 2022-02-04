@@ -1,16 +1,24 @@
-.homeContainer {
+.container {
   align-items: center;
-  margin-top: 200rpx;
+  background-color: #f7f7f7;
 }
 
-.homeTitle {
-  font-size: 45rpx;
-  font-weight: bold;
-  margin: 20rpx 0;
+.title {
+  font-weight: 500;
+  font-size: 50rpx; 
+}
+.content{
+  flex-direction: row;
+  font-weight: 200;
+  font-size: 30rpx;
 }
 
-.homeInfo {
-  font-size: 36rpx;
-  margin: 8rpx 0;
-  color: #555;
+.text-btn {
+  background-color: blue;
+  text-decoration:underline; 
+}
+
+.swiper {
+  border-radius: 8rpx;
+  overflow: hidden;
 }

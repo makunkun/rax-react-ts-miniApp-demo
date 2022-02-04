@@ -1,9 +1,9 @@
 {
   "targets": [
-    "web",
-    "miniapp",
-    "wechat-miniprogram"
+    "miniapp"
   ],
   "webpack5": true,
-  "plugins": []
+  "plugins": [
+    "build-plugin-fusion-mobile"
+  ]
 }
