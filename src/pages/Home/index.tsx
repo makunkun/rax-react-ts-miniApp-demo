@@ -5,14 +5,15 @@ import Text from 'rax-text';
 import Image from 'rax-image';
 import { Swiper, SwiperSlide } from 'rax-swiper';
 import { usePageHide, usePageShow } from 'rax-app';
+import navigate from '@uni/navigate';
+
 import styles from './index.module.css';
 
 export default function Home() {
-  const [autoplay] = useState(true);
-  const [swiperData] = useState([
+  const swiperData = [
     'https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/9123c1b0856a11ecac2df98e01878b2a.png',
     'https://ai-sample.oss-cn-hangzhou.aliyuncs.com/test/ba3cb110856a11ec9ec85dd890f02e27.png',
-  ]);
+  ];
   useEffect(() => {
     console.log('首页挂载，调用useEffect');
     return () => {
@@ -26,6 +27,11 @@ export default function Home() {
   usePageHide(() => {
     console.log('usePageHide, 回调函数会在页面隐藏后执行');
   });
+  const handleClick = () => {
+    navigate.push({
+      url: '/pages/Mine/Login/index',
+    });
+  };
   const slideItems = swiperData.map((uri, index) =>
     (<SwiperSlide key={index} className={styles['swiper-slide']}>
       <Image
@@ -44,8 +50,8 @@ export default function Home() {
     <View className={styles.container}>
       <Text className={styles.title}>个人首页</Text>
       <View className={styles.content}>更多详情内容,请先
-        <Text className={styles['text-btn']}>注册</Text>或
-        <Text className={styles['text-btn']}>登录</Text>访问！
+        <Text className={styles.textBtn} onClick={handleClick}>注册</Text>或
+        <Text className={styles.textBtn} onClick={handleClick}>登录</Text>访问！
       </View>
       <Image
         mode="aspectFill"
@@ -60,7 +66,7 @@ export default function Home() {
       />
       <Swiper
         className={styles.swiper}
-        autoplay={autoplay}
+        autoplay
       >
         {slideItems}
       </Swiper>

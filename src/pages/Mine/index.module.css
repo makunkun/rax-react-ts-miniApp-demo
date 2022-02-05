@@ -1,0 +1,14 @@
+.loginBtn {
+  margin: 20px;
+}
+
+.avatar {
+  align-items: center;
+  padding-top: 20px;
+}
+
+.nickName {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 30rpx;
+}
