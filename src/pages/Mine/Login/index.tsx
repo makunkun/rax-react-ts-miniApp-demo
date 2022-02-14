@@ -13,6 +13,7 @@ function Mine() {
   const [password, setPassword] = useState<string | null>(null);
   usePageShow(() => {
     const searchParams = getSearchParams();
+    console.log(searchParams);
   });
   const handleLogin = (n: string | null, p: string | null) => {
     // @ts-ignore
