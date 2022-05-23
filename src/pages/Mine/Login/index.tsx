@@ -4,6 +4,7 @@ import View from 'rax-view';
 import { Input, Button } from '@alifd/meet';
 import navigate from '@uni/navigate';
 import { showToast } from '@uni/toast';
+import store from '@/store';
 
 import '@alifd/meet/es/core/index.css';
 import styles from './index.module.css';
@@ -11,6 +12,9 @@ import styles from './index.module.css';
 function Mine() {
   const [name, setName] = useState<string | null>(null);
   const [password, setPassword] = useState<string | null>(null);
+  const userEffectsState = store.useModelEffectsState('user');
+  const [userState, dispatchers] = store.useModel('user');
+
   usePageShow(() => {
     const searchParams = getSearchParams();
     console.log(searchParams);
@@ -27,6 +31,12 @@ function Mine() {
       dataType: 'json',
       success(res) {
         if (res.data.success) {
+          console.log(userEffectsState);
+          // @ts-ignore
+          dispatchers.updateUserInfo({
+            name: n,
+            token: res.data.token,
+          });
           navigate.switchTab({
             url: '/pages/Mine/index',
           });

@@ -2,12 +2,14 @@ import { createElement, useState, useEffect } from 'rax';
 import View from 'rax-view';
 import navigate from '@uni/navigate';
 import { Avatar, Button } from '@alifd/meet';
+import store from '@/store';
 
 import styles from './index.module.css';
 
 function Mine() {
   const [ava, setAva] = useState('');
   const [name, setName] = useState('');
+  const [userState] = store.useModel('user');
 
   useEffect(() => {
     // @ts-ignore
@@ -41,18 +43,27 @@ function Mine() {
       },
     });
   };
+  let Btn;
+  if (userState && userState.token) {
+    Btn = (
+      <button className={styles.loginBtn} open-type="getAuthorize" onGetAuthorize={handleGetAuthorize} scope="userInfo">
+        会员基础信息授权
+      </button>
+    );
+  } else {
+    Btn = (
+      <Button type="primary" size="large" className={styles.loginBtn} onClick={handleClick}>
+        登陆/注册
+      </Button>
+    );
+  }
   return (
     <View>
       <View className={styles.avatar}>
         <Avatar size="large" src={ava} />
         <View className={styles.nickName}>{name}</View>
       </View>
-      <button className={styles.loginBtn} open-type="getAuthorize" onGetAuthorize={handleGetAuthorize} scope="userInfo">
-        会员基础信息授权
-      </button>
-      <Button type="primary" size="large" className={styles.loginBtn} onClick={handleClick}>
-        登陆/注册
-      </Button>
+      {Btn}
     </View>
   );
 }
